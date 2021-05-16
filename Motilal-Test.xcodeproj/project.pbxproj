@@ -13,6 +13,10 @@
 		B461A5F7264FBE6900346A64 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A5F6264FBE6900346A64 /* PersistentStorage.swift */; };
 		B461A5FF264FEF9D00346A64 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A5FE264FEF9D00346A64 /* TaskViewModel.swift */; };
 		B461A60F264FF50800346A64 /* TodoTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A60E264FF50800346A64 /* TodoTaskModel.swift */; };
+		B46B89D22650FAE600C657BC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B89D12650FAE600C657BC /* CoreDataManager.swift */; };
+		B46B89D82651002D00C657BC /* TodoTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B89D62651002D00C657BC /* TodoTask+CoreDataClass.swift */; };
+		B46B89D92651002D00C657BC /* TodoTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B89D72651002D00C657BC /* TodoTask+CoreDataProperties.swift */; };
+		B46B89DE2651043400C657BC /* JSONFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B89DD2651043400C657BC /* JSONFileHelper.swift */; };
 		B4BA9834264E7BEB005D51EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA9833264E7BEB005D51EC /* AppDelegate.swift */; };
 		B4BA9836264E7BEB005D51EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA9835264E7BEB005D51EC /* SceneDelegate.swift */; };
 		B4BA9838264E7BEB005D51EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA9837264E7BEB005D51EC /* ViewController.swift */; };
@@ -49,6 +53,10 @@
 		B461A5F6264FBE6900346A64 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		B461A5FE264FEF9D00346A64 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		B461A60E264FF50800346A64 /* TodoTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTaskModel.swift; sourceTree = "<group>"; };
+		B46B89D12650FAE600C657BC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B46B89D62651002D00C657BC /* TodoTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoTask+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		B46B89D72651002D00C657BC /* TodoTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoTask+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		B46B89DD2651043400C657BC /* JSONFileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileHelper.swift; sourceTree = "<group>"; };
 		B4BA9830264E7BEB005D51EC /* Motilal-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Motilal-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BA9833264E7BEB005D51EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4BA9835264E7BEB005D51EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,8 +194,12 @@
 		B4BA988F264EA3BB005D51EC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B46B89D62651002D00C657BC /* TodoTask+CoreDataClass.swift */,
+				B46B89D72651002D00C657BC /* TodoTask+CoreDataProperties.swift */,
 				B4BA9890264EA3D2005D51EC /* Utils.swift */,
 				B461A5F6264FBE6900346A64 /* PersistentStorage.swift */,
+				B46B89D12650FAE600C657BC /* CoreDataManager.swift */,
+				B46B89DD2651043400C657BC /* JSONFileHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -323,8 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B46B89D82651002D00C657BC /* TodoTask+CoreDataClass.swift in Sources */,
 				B461A60F264FF50800346A64 /* TodoTaskModel.swift in Sources */,
 				B461A5F7264FBE6900346A64 /* PersistentStorage.swift in Sources */,
+				B46B89DE2651043400C657BC /* JSONFileHelper.swift in Sources */,
 				B4BA9838264E7BEB005D51EC /* ViewController.swift in Sources */,
 				B461A5EF264FA79900346A64 /* TodoTaskViewController.swift in Sources */,
 				B4BA9834264E7BEB005D51EC /* AppDelegate.swift in Sources */,
@@ -332,7 +346,9 @@
 				B4BA983E264E7BEB005D51EC /* Motilal_Test.xcdatamodeld in Sources */,
 				B4BA9836264E7BEB005D51EC /* SceneDelegate.swift in Sources */,
 				B461A5FF264FEF9D00346A64 /* TaskViewModel.swift in Sources */,
+				B46B89D92651002D00C657BC /* TodoTask+CoreDataProperties.swift in Sources */,
 				B4BA9891264EA3D2005D51EC /* Utils.swift in Sources */,
+				B46B89D22650FAE600C657BC /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

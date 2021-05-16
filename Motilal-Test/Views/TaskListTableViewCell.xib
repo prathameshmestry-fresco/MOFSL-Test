@@ -40,6 +40,9 @@
                     <constraint firstAttribute="bottom" secondItem="vrk-cX-Hl3" secondAttribute="bottom" constant="10" id="qDK-eF-MGw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="1RA-F9-lV5" id="OsP-kQ-3Si"/>
+            </connections>
             <point key="canvasLocation" x="-146.37681159420291" y="100.11160714285714"/>
         </tableViewCell>
     </objects>

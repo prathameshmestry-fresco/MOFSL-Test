@@ -10,12 +10,14 @@ import CoreData
 
 class Utils {
     
-    class func convertStringToDate(dateStr : String) -> Date{
+    class func convertStringToDate(dateStr : String) -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        //dateFormate.timeZone = NSTimeZone(name: "UTC")! as TimeZone
-        let date = dateFormatter.date(from: dateStr)
-        return date!
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        if let date = dateFormatter.date(from: dateStr) {
+            return date
+        }
+        return Date()
     }
     
     class func convertDateToString(taskDate: Date) {
@@ -105,9 +107,7 @@ extension UITextField {
         let screenWidth = UIScreen.main.bounds.width
         
         //Add DatePicker as inputView
-        //let dateFormatter = DateFormatter()
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
-        //dateFormatter.dateFormat = "dd-MM-yyyy"
         datePicker.datePickerMode = .date
         datePicker.minimumDate = Date()
         self.inputView = datePicker

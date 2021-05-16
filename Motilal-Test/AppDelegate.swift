@@ -12,14 +12,24 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var timer: Timer?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
+        backgroundServiceTask()
         return true
     }
     
-   
+    func backgroundServiceTask() {
+        print("start")
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(syncTaskData), userInfo: nil, repeats: true)
+    }
 
+    @objc func syncTaskData() {
+        print("Calledd every 5 sec")
+        CoreDataManager.shared.performTaskInBackground()
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

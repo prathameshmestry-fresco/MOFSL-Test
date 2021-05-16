@@ -43,7 +43,6 @@ class TodoTaskViewController: UIViewController {
         result.todoDate = Utils.convertStringToDate(dateStr: dateTextField.text ?? "")
         result.isReminder = switchReminder.isOn
         PersistentStorage.shared.saveContext()
-        //result.todoDate = dateTextField.text
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -54,6 +53,8 @@ class TodoTaskViewController: UIViewController {
     @objc func doneButtonPressed() {
         if let  datePicker = self.dateTextField.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            datePicker.locale = Locale(identifier: "en_US_POSIX")
             dateFormatter.dateStyle = .medium
             self.dateTextField.text = dateFormatter.string(from: datePicker.date)
         }
