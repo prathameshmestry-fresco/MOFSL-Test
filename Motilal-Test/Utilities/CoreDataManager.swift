@@ -22,7 +22,7 @@ class CoreDataManager {
     func saveDataToJson() {
         do {
             guard let result = try PersistentStorage.shared.context.fetch(TodoTask.fetchRequest()) as? [TodoTask] else {return}
-            
+            taskList.removeAll()
             result.forEach { (TodoTask) in
                 taskList.append(TodoTask.getTodoTaskModel())
             }

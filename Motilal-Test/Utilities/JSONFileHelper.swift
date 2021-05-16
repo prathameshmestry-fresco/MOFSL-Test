@@ -22,44 +22,47 @@ class JSONFileHelper{
         return nil
     }
     
-    //read the json file
-    //    func readDataFromJSONFile(filename:String) -> TodoTaskModel?{
-    //        guard let fileURL = getFileURLfromDirectory(filename: filename) else {
-    //            return nil
-    //
-    //        }
-    //
-    //        do {
-    //            //get string from the path and then using Codable protocol, get the model created
-    //            let savedString = try String(contentsOf: fileURL, encoding: .utf8)
-    //            let model = getModelDataFromString(string: savedString)
-    //            return model
-    //            print(savedString)
-    //        } catch {
-    //            print("Error reading saved file")
-    //        }
-    //        return nil
-    //    }
+    // read the json file
+    func readDataFromJSONFile(filename:String) -> [TodoTaskModel]?{
+        guard let fileURL = getFileURLfromDirectory(filename: filename) else {
+            return nil
+        }
+        
+        do {
+            //get string from the path and then using Codable protocol, get the model created
+            let savedString = try String(contentsOf: fileURL, encoding: .utf8)
+            let model = getModelDataFromString(string: savedString)
+            return model
+        } catch {
+            print("Error reading saved file")
+        }
+        return nil
+    }
     
     func writeToJSONFile(filename:String, model: [TodoTaskModel]) -> Bool{
+        
         guard let fileURL = getFileURLfromDirectory(filename: filename) else {
             return false
         }
-        
-        print("URL --- \(fileURL.absoluteString)")
-       
-        var json: String?
+               
+        var json: String = ""
+//        
+//        do {
+//            try json.write(to: fileURL, atomically: true, encoding: .utf8)//write(to: fileURL)
+//        } catch  {
+//            print("error: \(error)")
+//        }
+//        
         do {
             let codedjson = try JSONEncoder().encode(model)
-            json = String(data: codedjson, encoding: .utf8)
+            json = String(data: codedjson, encoding: .utf8) ?? ""
         } catch  {
             print("error: \(error)")
         }
         
         //get string by using codable from the model, and write the string to the file
-        
         do {
-            try json?.write(to: fileURL, atomically: true, encoding: .utf8)//write(to: fileURL)
+            try json.write(to: fileURL, atomically: true, encoding: .utf8)//write(to: fileURL)
             return true
         } catch  {
             print("error: \(error)")

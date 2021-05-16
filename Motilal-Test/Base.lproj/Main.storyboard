@@ -156,11 +156,11 @@
                                 <rect key="frame" x="0.0" y="792" width="414" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pbs-Tq-0o4">
-                                        <rect key="frame" x="5" y="5" width="404" height="60"/>
+                                        <rect key="frame" x="10" y="5" width="394" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeZ-I5-dcB">
-                                                <rect key="frame" x="0.0" y="0.0" width="192" height="60"/>
-                                                <color key="backgroundColor" red="0.34374713429120829" green="1" blue="0.33878628118658471" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
+                                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                                 <state key="normal" title="Add Task"/>
                                                 <connections>
@@ -168,7 +168,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHF-dS-VtA">
-                                                <rect key="frame" x="212" y="0.0" width="192" height="60"/>
+                                                <rect key="frame" x="207" y="0.0" width="187" height="60"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                                 <state key="normal" title="Delete"/>
@@ -179,12 +179,12 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Pbs-Tq-0o4" secondAttribute="bottom" constant="5" id="H8Q-l3-8lY"/>
                                     <constraint firstAttribute="height" constant="70" id="Htq-ej-R9m"/>
-                                    <constraint firstItem="Pbs-Tq-0o4" firstAttribute="leading" secondItem="g8Q-L9-YPg" secondAttribute="leading" constant="5" id="YTM-e3-ncy"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pbs-Tq-0o4" secondAttribute="trailing" constant="5" id="Ydj-83-AzF"/>
+                                    <constraint firstItem="Pbs-Tq-0o4" firstAttribute="leading" secondItem="g8Q-L9-YPg" secondAttribute="leading" constant="10" id="YTM-e3-ncy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pbs-Tq-0o4" secondAttribute="trailing" constant="10" id="Ydj-83-AzF"/>
                                     <constraint firstItem="Pbs-Tq-0o4" firstAttribute="top" secondItem="g8Q-L9-YPg" secondAttribute="top" constant="5" id="eD8-IJ-rMY"/>
                                 </constraints>
                             </view>
@@ -218,6 +218,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

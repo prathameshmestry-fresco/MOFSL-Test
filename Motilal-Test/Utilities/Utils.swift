@@ -93,9 +93,8 @@ extension UITableView {
 
 
 extension UIButton {
-    
     func setCornerStyle() {
-        self.layer.cornerRadius = 10.0
+        self.layer.cornerRadius = 15.0
     }
 }
 

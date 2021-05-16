@@ -47,6 +47,10 @@ class ViewController: UIViewController {
         }))
         
         actionsheet.addAction(UIAlertAction(title: "View Task from JSON", style: UIAlertAction.Style.default, handler: { (action) -> Void in
+            if let taskModel = JSONFileHelper.shared.readDataFromJSONFile(filename: "todo") {
+                self.viewModelTask.taskList = taskModel
+                self.tableView.reloadData()
+            }
         }))
         actionsheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: { (action) -> Void in
         }))
