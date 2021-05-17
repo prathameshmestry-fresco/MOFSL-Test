@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func backgroundServiceTask() {
         print("start")
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(syncTaskData), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5000, target: self, selector: #selector(syncTaskData), userInfo: nil, repeats: true)
     }
 
     @objc func syncTaskData() {

@@ -31,6 +31,8 @@ class TaskListTableViewCell: UITableViewCell {
     func setupData(taskDetail: TodoTaskModel) {
         titleLabel.text = taskDetail.title
         descriptionLabel.text = taskDetail.description
+        dateLabel.text = Utils.convertDateToString(taskDate: taskDetail.taskDate ?? Date())
+        reminderLabel.text = "Reminder : \(taskDetail.isReminder ?? false ? "On" : "off")"
     }
     
 }

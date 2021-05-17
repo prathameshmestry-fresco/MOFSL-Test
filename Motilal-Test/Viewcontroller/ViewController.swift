@@ -32,6 +32,12 @@ class ViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.registerNibs(cellIdentifiers)
         self.tableView.rowHeight = UITableView.automaticDimension
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        var filterTask = viewModelTask.taskList.compactMap(dateFormatter.date(from:)).sorted(by: >)
+        print("Filtterr -- \(filterTask.descrip)")
     }
     
     @objc func addTapped() {
@@ -42,7 +48,9 @@ class ViewController: UIViewController {
         let actionsheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         actionsheet.addAction(UIAlertAction(title: "Add Task", style: UIAlertAction.Style.default, handler: { (action) -> Void in
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TodoTaskViewController") as? TodoTaskViewController
-            vc?.title = "Task"
+            vc?.title = "Add Task"
+            vc?.taskId = self.viewModelTask.taskList.count + 1
+            vc?.taskDelegate = self
             self.navigationController?.pushViewController(vc!, animated: true)
         }))
         
@@ -56,9 +64,8 @@ class ViewController: UIViewController {
         }))
         self.present(actionsheet, animated: true, completion: nil)
     }
+    
 }
-
-
 
 extension ViewController: UITableViewDataSource {
     
@@ -81,4 +88,19 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TodoTaskViewController") as? TodoTaskViewController
+        vc?.title = "Edit Task"
+        vc?.taskDelegate = self
+        vc?.userData = ["selectedTask": viewModelTask.taskList[indexPath.row], "isEdit": true]
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+}
+
+extension ViewController: TodoTaskActionDelegate {
+    func addEditTask() {
+        viewModelTask.getTaskData()
+        self.tableView.reloadData()
+    }
 }

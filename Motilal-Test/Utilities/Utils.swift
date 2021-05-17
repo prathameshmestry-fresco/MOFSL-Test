@@ -20,11 +20,11 @@ class Utils {
         return Date()
     }
     
-    class func convertDateToString(taskDate: Date) {
+    class func convertDateToString(taskDate: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "MMMM d, yyyy"
         let date = dateFormatter.string(from: taskDate as Date)
-        print(date)
+        return date
     }
 }
 

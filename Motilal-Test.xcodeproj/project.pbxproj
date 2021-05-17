@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B41A8868265140FA00BD3F03 /* DatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41A8867265140FA00BD3F03 /* DatabaseOperation.swift */; };
 		B461A5E3264F9E8A00346A64 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A5E1264F9E8A00346A64 /* TaskListTableViewCell.swift */; };
 		B461A5E4264F9E8A00346A64 /* TaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B461A5E2264F9E8A00346A64 /* TaskListTableViewCell.xib */; };
 		B461A5EF264FA79900346A64 /* TodoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461A5EE264FA79900346A64 /* TodoTaskViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B41A8867265140FA00BD3F03 /* DatabaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOperation.swift; sourceTree = "<group>"; };
 		B461A5E1264F9E8A00346A64 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
 		B461A5E2264F9E8A00346A64 /* TaskListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListTableViewCell.xib; sourceTree = "<group>"; };
 		B461A5EE264FA79900346A64 /* TodoTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTaskViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				B461A5F6264FBE6900346A64 /* PersistentStorage.swift */,
 				B46B89D12650FAE600C657BC /* CoreDataManager.swift */,
 				B46B89DD2651043400C657BC /* JSONFileHelper.swift */,
+				B41A8867265140FA00BD3F03 /* DatabaseOperation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				B4BA9836264E7BEB005D51EC /* SceneDelegate.swift in Sources */,
 				B461A5FF264FEF9D00346A64 /* TaskViewModel.swift in Sources */,
 				B46B89D92651002D00C657BC /* TodoTask+CoreDataProperties.swift in Sources */,
+				B41A8868265140FA00BD3F03 /* DatabaseOperation.swift in Sources */,
 				B4BA9891264EA3D2005D51EC /* Utils.swift in Sources */,
 				B46B89D22650FAE600C657BC /* CoreDataManager.swift in Sources */,
 			);

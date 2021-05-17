@@ -45,14 +45,7 @@ class JSONFileHelper{
             return false
         }
                
-        var json: String = ""
-//        
-//        do {
-//            try json.write(to: fileURL, atomically: true, encoding: .utf8)//write(to: fileURL)
-//        } catch  {
-//            print("error: \(error)")
-//        }
-//        
+        var json: String = ""      
         do {
             let codedjson = try JSONEncoder().encode(model)
             json = String(data: codedjson, encoding: .utf8) ?? ""

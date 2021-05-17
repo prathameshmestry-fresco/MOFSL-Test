@@ -6,26 +6,25 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskViewModel {
     
     var taskList = [TodoTaskModel]()
-    var vc: ViewController?
+    weak var vc: ViewController?
     
     func getTaskData() {
         do {
             guard let result = try PersistentStorage.shared.context.fetch(TodoTask.fetchRequest()) as? [TodoTask] else {return}
-            
+            taskList.removeAll()
             result.forEach { (TodoTask) in
                 taskList.append(TodoTask.getTodoTaskModel())
             }
+            print("Count Data ---- \(taskList.count)")
             vc?.tableView.reloadData()
-            debugPrint(taskList.description)
         } catch let error {
             debugPrint(error)
         }
-        
     }
-
     
 }

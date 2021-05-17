@@ -2,11 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H524" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="TodoTask" representedClassName="TodoTask" syncable="YES">
         <attribute name="isReminder" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="taskId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="todoDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="todoDescription" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TodoTask" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="TodoTask" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

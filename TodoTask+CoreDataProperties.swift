@@ -20,6 +20,7 @@ extension TodoTask {
     @NSManaged public var title: String?
     @NSManaged public var todoDate: Date?
     @NSManaged public var todoDescription: String?
+    @NSManaged public var taskId: Int32
 
     func getTodoTaskModel() -> TodoTaskModel {
         var model = TodoTaskModel()
@@ -27,6 +28,7 @@ extension TodoTask {
         model.description = todoDescription
         model.taskDate = todoDate
         model.isReminder = isReminder
+        model.id = Int(taskId)
         return model
     }
 }
