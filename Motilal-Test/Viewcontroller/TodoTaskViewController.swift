@@ -68,7 +68,7 @@ class TodoTaskViewController: UIViewController {
             self.taskDelegate?.addEditTask()
             self.navigationController?.popViewController(animated: true)
         } else {
-            let alert = UIAlertController(title: "Validation Error", message: "Todo Task Title and Description can't be empty.", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Oops!", message: "Task Title and Description can't be empty.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
