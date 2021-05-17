@@ -58,13 +58,28 @@ class TodoTaskViewController: UIViewController {
     }
     
     @IBAction func addEditTaskButtonClicked(_ sender: Any) {
-        if isEditable {
-            dbOperation.updateRecordData(taskId: taskId, title: titleTextField.text ?? "", taskDescription: descriptionTextField.text ?? "", todoDate: Utils.convertStringToDate(dateStr: dateTextField.text ?? ""), isReminderCheck: switchReminder.isOn)
+        
+        if validationCheck() {
+            if isEditable {
+                dbOperation.updateRecordData(taskId: taskId, title: titleTextField.text ?? "", taskDescription: descriptionTextField.text ?? "", todoDate: Utils.convertStringToDate(dateStr: dateTextField.text ?? ""), isReminderCheck: switchReminder.isOn)
+            } else {
+                dbOperation.addRecordData(taskId: taskId, title: titleTextField.text ?? "", taskDescription: descriptionTextField.text ?? "", todoDate: Utils.convertStringToDate(dateStr: dateTextField.text ?? ""), isReminderCheck: switchReminder.isOn)
+            }
+            self.taskDelegate?.addEditTask()
+            self.navigationController?.popViewController(animated: true)
         } else {
-            dbOperation.addRecordData(taskId: taskId, title: titleTextField.text ?? "", taskDescription: descriptionTextField.text ?? "", todoDate: Utils.convertStringToDate(dateStr: dateTextField.text ?? ""), isReminderCheck: switchReminder.isOn)
+            let alert = UIAlertController(title: "Validation Error", message: "Todo Task Title and Description can't be empty.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
-        self.taskDelegate?.addEditTask()
-        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func validationCheck() -> Bool {
+        
+        if let title = titleTextField.text, !title.isEmpty, let descriptionText = descriptionTextField.text, !descriptionText.isEmpty {
+            return true
+        }
+        return false
     }
     
     @IBAction func deleteTaskButtonClicked(_ sender: Any) {
