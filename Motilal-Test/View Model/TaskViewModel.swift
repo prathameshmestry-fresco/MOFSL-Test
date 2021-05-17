@@ -20,7 +20,7 @@ class TaskViewModel {
             result.forEach { (TodoTask) in
                 taskList.append(TodoTask.getTodoTaskModel())
             }
-            print("Count Data ---- \(taskList.count)")
+            taskList = taskList.sorted(by: { $0.taskDate?.compare($1.taskDate!) == .orderedAscending })
             vc?.tableView.reloadData()
         } catch let error {
             debugPrint(error)

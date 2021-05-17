@@ -36,8 +36,6 @@ class ViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d, yyyy"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        var filterTask = viewModelTask.taskList.compactMap(dateFormatter.date(from:)).sorted(by: >)
-        print("Filtterr -- \(filterTask.descrip)")
     }
     
     @objc func addTapped() {
@@ -55,7 +53,8 @@ class ViewController: UIViewController {
         }))
         
         actionsheet.addAction(UIAlertAction(title: "View Task from JSON", style: UIAlertAction.Style.default, handler: { (action) -> Void in
-            if let taskModel = JSONFileHelper.shared.readDataFromJSONFile(filename: "todo") {
+            if var taskModel = JSONFileHelper.shared.readDataFromJSONFile(filename: "todo") {
+                taskModel = taskModel.sorted(by: { $0.taskDate?.compare($1.taskDate!) == .orderedAscending })
                 self.viewModelTask.taskList = taskModel
                 self.tableView.reloadData()
             }

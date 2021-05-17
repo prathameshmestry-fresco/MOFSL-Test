@@ -21,17 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func backgroundServiceTask() {
-        print("start")
-        timer = Timer.scheduledTimer(timeInterval: 5000, target: self, selector: #selector(syncTaskData), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 900, target: self, selector: #selector(syncTaskData), userInfo: nil, repeats: true)
     }
 
     @objc func syncTaskData() {
-        print("Calledd every 5 sec")
         CoreDataManager.shared.performTaskInBackground()
     }
     
+    
     // MARK: UISceneSession Lifecycle
-
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
